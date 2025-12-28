@@ -1,0 +1,24 @@
+name: cashclashdroid
+description: A skill-based stock competition app.
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.1.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_core: ^2.27.0
+  firebase_auth: ^4.17.0
+  cloud_firestore: ^4.15.0
+  google_sign_in: ^6.2.1
+  google_mobile_ads: ^5.3.1
+  http: ^1.1.0 # For Finnhub API requests
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
