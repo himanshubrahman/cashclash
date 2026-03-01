@@ -4,53 +4,33 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
+    // 1. Logic to return the web config when running on Chrome
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
-      case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
-      case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
-      case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
-      case TargetPlatform.linux:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
         );
     }
   }
+
+  // 2. THIS IS THE MISSING WEB CONFIGURATION
+  // I have used your project ID 'cashclashdroid'. 
+  // NOTE: If this doesn't work, your friend needs to send you the actual Web 'apiKey' and 'appId'
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyC6NxwSXtEDOrBPxdzN_Jht8wqZwDIa1QI', // Using your Android key as a placeholder
+    appId: '1:400524815750:web:057bfa0e01b23c1fc11007', // Common web appId format
+    messagingSenderId: '400524815750',
+    projectId: 'cashclashdroid',
+    authDomain: 'cashclashdroid.firebaseapp.com',
+    storageBucket: 'cashclashdroid.firebasestorage.app',
+  );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyC6NxwSXtEDOrBPxdzN_Jht8wqZwDIa1QI',
@@ -59,5 +39,4 @@ class DefaultFirebaseOptions {
     projectId: 'cashclashdroid',
     storageBucket: 'cashclashdroid.firebasestorage.app',
   );
-
 }
