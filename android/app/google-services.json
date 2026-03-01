@@ -12,7 +12,20 @@
           "package_name": "com.example.cashclashdroid"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "400524815750-16sler1m7aabf9be4dd3i1k28f4bblia.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cashclashdroid",
+            "certificate_hash": "2024002a359623331fd9a1df5213ed86d4b28a05"
+          }
+        },
+        {
+          "client_id": "400524815750-6nodev8crbq40v22rjg01iug4iunchl3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC6NxwSXtEDOrBPxdzN_Jht8wqZwDIa1QI"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400524815750-6nodev8crbq40v22rjg01iug4iunchl3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
